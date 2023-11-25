@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+    //Declare variable
+    var name = "Dara";
+    var age = 18;
+    var isMale = true;
+    var dob = DateTime.Now;
+
+    string address = "Battambang";
+    double weight = 58.5;
+
+    string qty = "5";
+    double price = 70;
+    double total = qty.AsInt() * price;
+
+    var txt = "";
+    if (DateTime.Now.Hour <= 10)
+    {
+        txt = "Good Morning";
+    }
+    else if (DateTime.Now.Hour > 10 & DateTime.Now.Hour <= 13)
+    {
+        txt = "Hello";
+    }
+    else
+    {
+        txt = "Good Afternoon";
+    }
+}
+
+<h2>@txt</h2>
+<h2>@dob</h2>
+
+<h1>Hello From RPITSB</h1>
+<h1>Name : @name ,Age : @age </h1><br />
+<h2>Address : @address</h2>
+<h2>Total = @total</h2>
+<h2>Qty Data Type is INT? = @qty.IsInt()</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Day</td>
+            <td>@DateTime.Now.Day</td>
+        </tr>
+        <tr>
+            <td>Hour</td>
+            <td>@DateTime.Now.Hour</td>
+        </tr>
+        <tr>
+            <td>Minute</td>
+            <td>@DateTime.Now.Minute</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>@DateTime.Now.Second</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<ul>
+    @for (var i = 1; i <= 20; i++)
+    {
+        <li>Line @i</li>
+    }
+</ul>
+@*//=======Foreach Loop*@
+<ol>
+    @foreach (var d in Request.ServerVariables)
+    {
+        <li>@d</li>
+    }
+</ol>
+@*=========While Loop*@
+@{  
+    var j = 0;
+            while (j < 5)
+            {
+                <p>@j</p>
+                j++;
+            }
+}
+
+@{ 
+    string[] member = { "Lina", "Dara", "Kai" };
+    int position = Array.IndexOf(member, "Kai") + 1;
+    int len = member.Length;
+}
+@foreach(var named in member){
+                <p>@named</p>
+            }
+<p>Kai is at Position @position</p>
+<p>Total Member = @len</p>
+
+@{ 
+    var weekday = DateTime.Now.DayOfWeek;
+    var day = weekday.ToString();
+    var message = "";
+    switch (day)
+    {
+        case "Monday":
+            message = "This is first day of week";
+            break;
+        case "Thursday":
+            message = "Only one day before weekend";
+            break;
+        case "Friday":
+            message = "Tomorrow is weekend";
+            break;
+        default:
+            message="Today is "+ day;
+            break;
+    }
+}
+<h1>@message</h1>
+
+
+
+
+

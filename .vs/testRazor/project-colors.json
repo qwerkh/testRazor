@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cec4071b-e445-4eab-8b46-37c721db744b": {
+      "ProjectGuid": "cec4071b-e445-4eab-8b46-37c721db744b",
+      "DisplayName": "testRazor",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
